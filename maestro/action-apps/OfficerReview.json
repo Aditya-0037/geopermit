@@ -1,0 +1,56 @@
+{
+  "form_name": "OfficerReviewForm",
+  "version": "1.0",
+  "components": [
+    {
+      "key": "caseSummary",
+      "type": "panel",
+      "title": "Permit Application Summary (Read Only)",
+      "components": [
+        { "key": "applicant_name", "type": "textfield", "label": "Applicant Name", "disabled": true },
+        { "key": "permit_type", "type": "textfield", "label": "Permit Type", "disabled": true },
+        { "key": "site_address", "type": "textfield", "label": "Site Address", "disabled": true }
+      ]
+    },
+    {
+      "key": "gisOverlay",
+      "type": "html",
+      "html": "<div style='padding: 10px; border: 1px solid #ccc;'><strong>GIS Map Embed</strong><br/>Detected Zone: {{ data.detected_zone }}<br/>Zone Conflict: {{ data.zone_conflict }}</div>"
+    },
+    {
+      "key": "aiAdvice",
+      "type": "panel",
+      "title": "AI Recommendation Details",
+      "components": [
+        { "key": "ai_decision", "type": "textfield", "label": "AI Proposed Action", "disabled": true },
+        { "key": "ai_reasoning", "type": "textarea", "label": "AI Rationale", "disabled": true }
+      ]
+    },
+    {
+      "key": "officerDecision",
+      "type": "panel",
+      "title": "Officer Decision Form",
+      "components": [
+        {
+          "key": "decision",
+          "type": "select",
+          "label": "Final Decision",
+          "data": {
+            "values": [
+              { "value": "Approved", "label": "Approve Permit" },
+              { "value": "Rejected", "label": "Reject Permit" },
+              { "value": "MoreInfoRequired", "label": "Request More Information" }
+            ]
+          },
+          "required": true
+        },
+        {
+          "key": "notes",
+          "type": "textarea",
+          "label": "Justification & Notes",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

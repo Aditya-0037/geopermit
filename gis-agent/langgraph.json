@@ -1,0 +1,9 @@
+{
+  "name": "GISComplianceAgent",
+  "version": "1.0.0",
+  "entrypoint": "agent.py:run_gis_agent",
+  "dependencies": [
+    "httpx>=0.25.0",
+    "uipath-langchain>=0.1.5"
+  ]
+}

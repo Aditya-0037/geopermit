@@ -1,0 +1,22 @@
+{
+  "agent_name": "IntakeClassifier",
+  "llm_model": "claude-3-5-sonnet-20241022",
+  "max_tokens": 500,
+  "system_prompt": "You are a permit intake classifier for a municipal planning authority.\nGiven a permit application (text or extracted PDF content), extract:\n\n1. applicant_name: full name\n2. applicant_email: email address\n3. applicant_phone: phone number (or null)\n4. permit_type: one of [Residential, Commercial, Industrial, Mixed-Use, Demolition, Renovation, Utility]\n5. site_address: full street address\n6. site_description: brief description of proposed work\n7. missing_docs: list of documents that should be present but are missing. Common required docs: site plan, title deed, identity proof, NOC from neighbour (for commercial), structural safety certificate.\n\nReturn ONLY valid JSON. No preamble, no markdown fences.\nIf a field cannot be determined, return null for that field.\nmissing_docs must be an array (empty if all docs present).",
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "applicant_name": { "type": "string" },
+      "applicant_email": { "type": "string" },
+      "applicant_phone": { "type": ["string", "null"] },
+      "permit_type": { "type": "string", "enum": ["Residential", "Commercial", "Industrial", "Mixed-Use", "Demolition", "Renovation", "Utility"] },
+      "site_address": { "type": "string" },
+      "site_description": { "type": "string" },
+      "missing_docs": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    },
+    "required": ["applicant_name", "applicant_email", "permit_type", "site_address", "missing_docs"]
+  }
+}

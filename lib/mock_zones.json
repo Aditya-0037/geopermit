@@ -1,0 +1,46 @@
+[
+  {
+    "id": "zone_1",
+    "name": "Green Valley Residential Area",
+    "landuse": "residential",
+    "coordinates": [
+      {"lat": 28.61, "lng": 77.20},
+      {"lat": 28.61, "lng": 77.21},
+      {"lat": 28.62, "lng": 77.21},
+      {"lat": 28.62, "lng": 77.20}
+    ]
+  },
+  {
+    "id": "zone_2",
+    "name": "Central Business District",
+    "landuse": "commercial",
+    "coordinates": [
+      {"lat": 28.61, "lng": 77.22},
+      {"lat": 28.61, "lng": 77.23},
+      {"lat": 28.62, "lng": 77.23},
+      {"lat": 28.62, "lng": 77.22}
+    ]
+  },
+  {
+    "id": "zone_3",
+    "name": "Industrial Park",
+    "landuse": "industrial",
+    "coordinates": [
+      {"lat": 28.61, "lng": 77.24},
+      {"lat": 28.61, "lng": 77.25},
+      {"lat": 28.62, "lng": 77.25},
+      {"lat": 28.62, "lng": 77.24}
+    ]
+  },
+  {
+    "id": "zone_4",
+    "name": "Protected Wetland conservation area",
+    "landuse": "nature_reserve",
+    "coordinates": [
+      {"lat": 28.61, "lng": 77.26},
+      {"lat": 28.61, "lng": 77.27},
+      {"lat": 28.62, "lng": 77.27},
+      {"lat": 28.62, "lng": 77.26}
+    ]
+  }
+]

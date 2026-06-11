@@ -1,0 +1,85 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="PermitApplicationFlow"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="4">
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Maestro.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <!-- Main Workflow representing the 4-agent Maestro Case BPMN -->
+  <Sequence DisplayName="Maestro Permit Exception Orchestration Flow" sap2010:WorkflowViewState.IdRef="Seq_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="CaseId" />
+      <Variable x:TypeArguments="x:String" Name="ApplicantEmail" />
+      <Variable x:TypeArguments="x:String" Name="PermitType" />
+      <Variable x:TypeArguments="x:String" Name="SiteAddress" />
+      <Variable x:TypeArguments="x:Boolean" Name="ZoneConflict" />
+      <Variable x:TypeArguments="x:Boolean" Name="ProtectedArea" />
+      <Variable x:TypeArguments="x:String" Name="AIDecision" />
+    </Sequence.Variables>
+
+    <!-- Stage 1: Intake Classifier Agent -->
+    <ui:StartAgent DisplayName="Run Intake Classifier (Agent 1)" AgentName="IntakeClassifier" OutputSchema="JSON">
+      <ui:StartAgent.Input>
+        <InArgument x:TypeArguments="x:String">[RawText]</InArgument>
+      </ui:StartAgent.Input>
+    </ui:StartAgent>
+
+    <!-- Stage 2: GIS Compliance Coded Agent (Python) -->
+    <ui:StartCodedAgent DisplayName="Run GIS Compliance Coded Agent (Agent 2)" AgentPath="gis-agent/agent.py">
+      <ui:StartCodedAgent.Input>
+        <InArgument x:TypeArguments="x:String">[SiteAddress]</InArgument>
+        <InArgument x:TypeArguments="x:String">[PermitType]</InArgument>
+      </ui:StartCodedAgent.Input>
+      <ui:StartCodedAgent.Output>
+        <OutArgument x:TypeArguments="x:Boolean">[ZoneConflict]</OutArgument>
+        <OutArgument x:TypeArguments="x:Boolean">[ProtectedArea]</OutArgument>
+      </ui:StartCodedAgent.Output>
+    </ui:StartCodedAgent>
+
+    <!-- Stage 3: Resolution Advisor Agent -->
+    <ui:StartAgent DisplayName="Run Case Resolution Advisor (Agent 3)" AgentName="ResolutionAdvisor" OutputSchema="JSON">
+      <ui:StartAgent.Input>
+        <InArgument x:TypeArguments="x:Boolean">[ZoneConflict]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean">[ProtectedArea]</InArgument>
+      </ui:StartAgent.Input>
+      <ui:StartAgent.Output>
+        <OutArgument x:TypeArguments="x:String">[AIDecision]</OutArgument>
+      </ui:StartAgent.Output>
+    </ui:StartAgent>
+
+    <!-- Stage 4: Gateway Routing Check -->
+    <Switch x:TypeArguments="x:String" DisplayName="Route Case Based on AI Advice" Expression="[AIDecision]" sap2010:WorkflowViewState.IdRef="Switch_1">
+      
+      <!-- Path A: AutoApprove -->
+      <Sequence x:Key="AutoApprove" DisplayName="Auto Approve Flow">
+        <ui:StartProcess DisplayName="Trigger RPA Notification Bot (Approve)" ProcessName="NotificationBot_Approve" />
+      </Sequence>
+
+      <!-- Path B: RequestDocuments -->
+      <Sequence x:Key="RequestDocuments" DisplayName="Request Documents Loop">
+        <ui:StartProcess DisplayName="Trigger RPA Notification Bot (Request Docs)" ProcessName="NotificationBot_RequestDocs" />
+        <ui:WaitForEvent DisplayName="Wait for Citizen Document Resubmission" EventType="DocumentUpload" />
+      </Sequence>
+
+      <!-- Path C: EscalateHuman -->
+      <Sequence x:Key="EscalateHuman" DisplayName="Human-in-the-loop exception routing">
+        <ui:CreateActionTask DisplayName="Create Action App Task" TaskTitle="[&quot;Review Permit Exception - &quot; + CaseId]" TaskForm="OfficerReview.json">
+          <ui:CreateActionTask.SLA>
+            <InArgument x:TypeArguments="x:Int32">5</InArgument> <!-- 5 business days -->
+          </ui:CreateActionTask.SLA>
+        </ui:CreateActionTask>
+        <ui:WaitForActionTask DisplayName="Wait for Officer Decision" />
+        <ui:StartProcess DisplayName="Trigger RPA Notification Bot (Officer Verdict)" ProcessName="NotificationBot_Final" />
+      </Sequence>
+      
+    </Switch>
+  </Sequence>
+</Activity>
