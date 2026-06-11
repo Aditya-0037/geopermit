@@ -3,23 +3,19 @@ import { FileText, MapPin, Users, Zap, ArrowRight, ShieldCheck, Compass, HelpCir
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col relative overflow-hidden">
-      {/* Background glow effects */}
-      <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-blue-900/20 blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-purple-950/30 blur-[120px] pointer-events-none" />
-
+    <div className="min-h-screen bg-orange-50 text-stone-800 flex flex-col relative">
       {/* Navigation Header */}
-      <header className="container mx-auto px-6 py-6 border-b border-slate-900 flex justify-between items-center z-10">
+      <header className="container mx-auto px-6 py-6 border-b border-orange-200 flex justify-between items-center z-10">
         <div className="flex items-center gap-2">
-          <Compass className="w-6 h-6 text-indigo-400" />
-          <span className="font-extrabold text-lg tracking-wider bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-            GEOPERMIT AI
+          <Compass className="w-7 h-7 text-orange-600" strokeWidth={2.5} />
+          <span className="font-black text-xl tracking-tight text-orange-600">
+            GEOPERMIT
           </span>
         </div>
-        <div className="flex items-center gap-6 text-xs font-semibold text-slate-400">
-          <Link href="/submit" className="hover:text-slate-200 transition-colors">Submit Form</Link>
-          <Link href="/track" className="hover:text-slate-200 transition-colors">Track Application</Link>
-          <Link href="/dashboard" className="px-4 py-2 bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-200 rounded-xl transition-all">
+        <div className="flex items-center gap-6 text-sm font-semibold text-stone-600">
+          <Link href="/submit" className="hover:text-orange-600 transition-colors">Submit Form</Link>
+          <Link href="/track" className="hover:text-orange-600 transition-colors">Track Application</Link>
+          <Link href="/dashboard" className="px-5 py-2.5 bg-orange-600 hover:bg-orange-700 text-white rounded-xl transition-all shadow-sm">
             Officer Portal
           </Link>
         </div>
@@ -27,26 +23,26 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="container mx-auto px-6 py-24 text-center max-w-4xl z-10 flex-1 flex flex-col justify-center">
-        <h1 className="text-5xl md:text-6xl font-black tracking-tight mb-6 leading-tight">
+        <h1 className="text-5xl md:text-6xl font-black tracking-tight mb-6 leading-tight text-stone-900">
           Spatial Land Use & Exception{" "}
-          <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+          <span className="text-orange-600">
             Orchestrator
           </span>
         </h1>
-        <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+        <p className="text-lg text-stone-600 max-w-2xl mx-auto mb-12 leading-relaxed">
           GeoPermit AI evaluates permit applications against GIS zoning boundaries in real-time, automating 80% of routine cases and escalating anomalies to planning officers. Built on UiPath Maestro Case.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link 
             href="/submit"
-            className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white rounded-xl transition-all font-bold tracking-wide shadow-lg shadow-indigo-900/30 flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-8 py-4 bg-orange-600 hover:bg-orange-700 text-white rounded-2xl transition-all font-bold tracking-wide shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
           >
-            Submit Permit Application <ArrowRight className="w-4.5 h-4.5" />
+            Submit Permit Application <ArrowRight className="w-5 h-5" />
           </Link>
           <Link 
             href="/dashboard"
-            className="w-full sm:w-auto px-8 py-4 bg-slate-900/60 hover:bg-slate-800/80 border border-slate-850 hover:border-slate-750 text-slate-200 rounded-xl transition-all font-bold tracking-wide backdrop-blur-md"
+            className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-orange-50 border-2 border-orange-300 text-orange-700 rounded-2xl transition-all font-bold tracking-wide"
           >
             Access Officer Dashboard
           </Link>
@@ -60,27 +56,31 @@ export default function HomePage() {
             icon={<Zap className="w-6 h-6" />}
             title="80% Auto-Approved"
             description="Routine permit reviews complete in under 10 seconds. Automated check pipeline."
+            color="bg-amber-100 text-amber-700 border-amber-200"
           />
           <FeatureCard
             icon={<MapPin className="w-6 h-6" />}
             title="GIS Spatial Intelligence"
             description="Address geocoding and real-time zoning tags query via OpenStreetMap."
+            color="bg-rose-100 text-rose-700 border-rose-200"
           />
           <FeatureCard
             icon={<Users className="w-6 h-6" />}
             title="Human-in-the-Loop"
             description="Officers review exceptions with detailed visual overlays and AI reasoning."
+            color="bg-orange-100 text-orange-700 border-orange-200"
           />
           <FeatureCard
             icon={<FileText className="w-6 h-6" />}
             title="Immutable Process Audit"
             description="Complete audit trails logging every agent and officer action in Maestro Case."
+            color="bg-yellow-100 text-yellow-800 border-yellow-200"
           />
         </div>
       </section>
 
       {/* Stats Board */}
-      <section className="bg-slate-900/40 border-y border-slate-900 py-16 z-10">
+      <section className="bg-white border-y border-orange-200 py-16 z-10">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-12 text-center">
             <StatCard number="60-80%" label="Reduction in permit queue backlog" />
@@ -91,20 +91,20 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="container mx-auto px-6 py-8 text-center text-xs text-slate-500 z-10 border-t border-slate-950">
+      <footer className="container mx-auto px-6 py-8 text-center text-xs text-stone-500 z-10 border-t border-orange-200">
         <p>Built for the UiPath AgentHack 2026 | Track 1: UiPath Maestro Case</p>
       </footer>
     </div>
   );
 }
 
-function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
+function FeatureCard({ icon, title, description, color }: { icon: React.ReactNode; title: string; description: string; color: string }) {
   return (
-    <div className="p-6 bg-slate-900/40 backdrop-blur-xl border border-slate-900 hover:border-slate-800 rounded-2xl transition-all shadow-xl flex flex-col gap-4">
-      <div className="text-indigo-400 bg-slate-950 p-3 rounded-xl border border-slate-850 w-fit">{icon}</div>
+    <div className="p-6 bg-white border-2 border-orange-200 hover:border-orange-400 rounded-2xl transition-all shadow-sm hover:shadow-md flex flex-col gap-4">
+      <div className={`${color} p-3 rounded-xl border-2 w-fit`}>{icon}</div>
       <div>
-        <h3 className="text-md font-bold text-slate-200 mb-1">{title}</h3>
-        <p className="text-slate-400 text-xs leading-relaxed">{description}</p>
+        <h3 className="text-base font-bold text-stone-900 mb-2">{title}</h3>
+        <p className="text-stone-600 text-sm leading-relaxed">{description}</p>
       </div>
     </div>
   );
@@ -113,10 +113,10 @@ function FeatureCard({ icon, title, description }: { icon: React.ReactNode; titl
 function StatCard({ number, label }: { number: string; label: string }) {
   return (
     <div className="flex flex-col gap-1">
-      <div className="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+      <div className="text-5xl font-black tracking-tight text-orange-600">
         {number}
       </div>
-      <div className="text-slate-400 text-xs uppercase font-semibold tracking-wider mt-1">{label}</div>
+      <div className="text-stone-600 text-xs uppercase font-bold tracking-wider mt-2">{label}</div>
     </div>
   );
 }

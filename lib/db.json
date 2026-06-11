@@ -11,7 +11,11 @@
     "site_address": "14 Green Valley Rd, New Delhi",
     "site_lat": 28.611,
     "site_lng": 77.205,
-    "documents": ["site_plan.pdf", "property_deed.pdf", "applicant_id.pdf"],
+    "documents": [
+      "site_plan.pdf",
+      "property_deed.pdf",
+      "applicant_id.pdf"
+    ],
     "missing_docs": [],
     "detected_zone": "residential",
     "requested_use": "residential",
@@ -64,7 +68,11 @@
     "site_address": "42 Green Valley Rd, New Delhi",
     "site_lat": 28.613,
     "site_lng": 77.206,
-    "documents": ["site_plan.pdf", "structural_cert.pdf", "applicant_id.pdf"],
+    "documents": [
+      "site_plan.pdf",
+      "structural_cert.pdf",
+      "applicant_id.pdf"
+    ],
     "missing_docs": [],
     "detected_zone": "residential",
     "requested_use": "commercial",
@@ -117,8 +125,13 @@
     "site_address": "10 CBD Plaza, New Delhi",
     "site_lat": 28.615,
     "site_lng": 77.225,
-    "documents": ["structural_cert.pdf"],
-    "missing_docs": ["site plan", "neighbor NOC"],
+    "documents": [
+      "structural_cert.pdf"
+    ],
+    "missing_docs": [
+      "site plan",
+      "neighbor NOC"
+    ],
     "detected_zone": "commercial",
     "requested_use": "commercial",
     "zone_conflict": false,
@@ -155,6 +168,476 @@
         "actor": "RPA Notification Bot",
         "action": "Applicant Notified",
         "details": "Sent automated notification requesting upload of: site plan, neighbor NOC. Case status updated to 'DocumentsRequested'."
+      }
+    ]
+  },
+  {
+    "case_id": "ec6163df-61b0-4133-9dd5-3180c13cd0e6",
+    "created_at": "2026-06-11T07:37:41.326Z",
+    "sla_deadline": "2026-06-25T07:37:41.326Z",
+    "status": "Closed",
+    "applicant_name": "Rahul Sharma",
+    "applicant_email": "rahul@example.com",
+    "applicant_phone": null,
+    "permit_type": "Residential",
+    "site_address": "14 Green Valley Rd, New Delhi",
+    "site_lat": 28.611,
+    "site_lng": 77.205,
+    "documents": [
+      "site_plan.pdf",
+      "property_deed.pdf",
+      "applicant_id.pdf"
+    ],
+    "missing_docs": [],
+    "detected_zone": "residential",
+    "requested_use": "residential",
+    "zone_conflict": false,
+    "protected_area": false,
+    "gis_source": "GeoPermit Local Zoning GIS",
+    "gis_polygon_id": "zone/zone_1",
+    "ai_decision": "AutoApprove",
+    "ai_confidence": 0.95,
+    "ai_reasoning": "COMPLIANT: Zoning is compliant (requested 'Residential' in 'residential' zone), no environmental concerns, and all required documents are successfully attached.",
+    "assigned_officer": "System Automated",
+    "officer_decision": "Approved",
+    "officer_notes": "System auto-approved.",
+    "audit_log": [
+      {
+        "timestamp": "2026-06-11T07:37:41.328Z",
+        "actor": "Intake Classifier Agent",
+        "action": "Intake Parsed",
+        "details": "Received permit application. Applicant: Rahul Sharma, Type: Residential. Checked uploaded documents: [site_plan.pdf, property_deed.pdf, applicant_id.pdf]."
+      },
+      {
+        "timestamp": "2026-06-11T07:37:41.329Z",
+        "actor": "GIS Compliance Agent",
+        "action": "GIS Compliance Checked",
+        "details": "Geocoded site coordinates to (28.6110, 77.2050). Detected zone: 'residential'. Zone Conflict: false, Protected Area: false (via GeoPermit Local Zoning GIS)."
+      },
+      {
+        "timestamp": "2026-06-11T07:37:41.329Z",
+        "actor": "Case Resolution Agent",
+        "action": "Resolution Evaluated",
+        "details": "AI Decision: AutoApprove (Confidence: 0.95). Reasoning: COMPLIANT: Zoning is compliant (requested 'Residential' in 'residential' zone), no environmental concerns, and all required documents are successfully attached."
+      },
+      {
+        "timestamp": "2026-06-11T07:37:41.329Z",
+        "actor": "RPA Notification Bot",
+        "action": "Auto Approval Issued",
+        "details": "Zoning check passed automatically. Approval permit issued. Sent notification email to rahul@example.com."
+      }
+    ]
+  },
+  {
+    "case_id": "2c466486-8fc4-40fa-a455-5440f493840b",
+    "created_at": "2026-06-11T07:38:23.486Z",
+    "sla_deadline": "2026-06-25T07:38:23.486Z",
+    "status": "Closed",
+    "applicant_name": "Rahul Sharma",
+    "applicant_email": "rahul@example.com",
+    "applicant_phone": null,
+    "permit_type": "Residential",
+    "site_address": "14 Green Valley Rd, New Delhi",
+    "site_lat": 28.611,
+    "site_lng": 77.205,
+    "documents": [
+      "site_plan.pdf",
+      "property_deed.pdf",
+      "applicant_id.pdf"
+    ],
+    "missing_docs": [],
+    "detected_zone": "residential",
+    "requested_use": "residential",
+    "zone_conflict": false,
+    "protected_area": false,
+    "gis_source": "GeoPermit Local Zoning GIS",
+    "gis_polygon_id": "zone/zone_1",
+    "ai_decision": "AutoApprove",
+    "ai_confidence": 0.95,
+    "ai_reasoning": "COMPLIANT: Zoning is compliant (requested 'Residential' in 'residential' zone), no environmental concerns, and all required documents are successfully attached.",
+    "assigned_officer": "System Automated",
+    "officer_decision": "Approved",
+    "officer_notes": "System auto-approved.",
+    "audit_log": [
+      {
+        "timestamp": "2026-06-11T07:38:23.486Z",
+        "actor": "Intake Classifier Agent",
+        "action": "Intake Parsed",
+        "details": "Received permit application. Applicant: Rahul Sharma, Type: Residential. Checked uploaded documents: [site_plan.pdf, property_deed.pdf, applicant_id.pdf]."
+      },
+      {
+        "timestamp": "2026-06-11T07:38:23.486Z",
+        "actor": "GIS Compliance Agent",
+        "action": "GIS Compliance Checked",
+        "details": "Geocoded site coordinates to (28.6110, 77.2050). Detected zone: 'residential'. Zone Conflict: false, Protected Area: false (via GeoPermit Local Zoning GIS)."
+      },
+      {
+        "timestamp": "2026-06-11T07:38:23.486Z",
+        "actor": "Case Resolution Agent",
+        "action": "Resolution Evaluated",
+        "details": "AI Decision: AutoApprove (Confidence: 0.95). Reasoning: COMPLIANT: Zoning is compliant (requested 'Residential' in 'residential' zone), no environmental concerns, and all required documents are successfully attached."
+      },
+      {
+        "timestamp": "2026-06-11T07:38:23.486Z",
+        "actor": "RPA Notification Bot",
+        "action": "Auto Approval Issued",
+        "details": "Zoning check passed automatically. Approval permit issued. Sent notification email to rahul@example.com."
+      }
+    ]
+  },
+  {
+    "case_id": "ebbd6efd-4348-45a5-aff2-aa2c6bc14a21",
+    "created_at": "2026-06-11T07:40:24.727Z",
+    "sla_deadline": "2026-06-25T07:40:24.727Z",
+    "status": "Closed",
+    "applicant_name": "Rahul Sharma",
+    "applicant_email": "rahul@example.com",
+    "applicant_phone": null,
+    "permit_type": "Residential",
+    "site_address": "14 Green Valley Rd, New Delhi",
+    "site_lat": 28.611,
+    "site_lng": 77.205,
+    "documents": [
+      "site_plan.pdf",
+      "property_deed.pdf",
+      "applicant_id.pdf"
+    ],
+    "missing_docs": [],
+    "detected_zone": "residential",
+    "requested_use": "residential",
+    "zone_conflict": false,
+    "protected_area": false,
+    "gis_source": "GeoPermit Local Zoning GIS",
+    "gis_polygon_id": "zone/zone_1",
+    "ai_decision": "AutoApprove",
+    "ai_confidence": 0.95,
+    "ai_reasoning": "COMPLIANT: Zoning is compliant (requested 'Residential' in 'residential' zone), no environmental concerns, and all required documents are successfully attached.",
+    "assigned_officer": "System Automated",
+    "officer_decision": "Approved",
+    "officer_notes": "System auto-approved.",
+    "audit_log": [
+      {
+        "timestamp": "2026-06-11T07:40:24.727Z",
+        "actor": "Intake Classifier Agent",
+        "action": "Intake Parsed",
+        "details": "Received permit application. Applicant: Rahul Sharma, Type: Residential. Checked uploaded documents: [site_plan.pdf, property_deed.pdf, applicant_id.pdf]."
+      },
+      {
+        "timestamp": "2026-06-11T07:40:24.727Z",
+        "actor": "GIS Compliance Agent",
+        "action": "GIS Compliance Checked",
+        "details": "Geocoded site coordinates to (28.6110, 77.2050). Detected zone: 'residential'. Zone Conflict: false, Protected Area: false (via GeoPermit Local Zoning GIS)."
+      },
+      {
+        "timestamp": "2026-06-11T07:40:24.727Z",
+        "actor": "Case Resolution Agent",
+        "action": "Resolution Evaluated",
+        "details": "AI Decision: AutoApprove (Confidence: 0.95). Reasoning: COMPLIANT: Zoning is compliant (requested 'Residential' in 'residential' zone), no environmental concerns, and all required documents are successfully attached."
+      },
+      {
+        "timestamp": "2026-06-11T07:40:24.727Z",
+        "actor": "RPA Notification Bot",
+        "action": "Auto Approval Issued",
+        "details": "Zoning check passed automatically. Approval permit issued. Sent notification email to rahul@example.com."
+      }
+    ]
+  },
+  {
+    "case_id": "9cde8323-a566-453d-aeed-004ea3800f05",
+    "created_at": "2026-06-11T07:40:49.557Z",
+    "sla_deadline": "2026-06-25T07:40:49.557Z",
+    "status": "HumanReview",
+    "applicant_name": "TechCorp Ltd",
+    "applicant_email": "contact@techcorp.com",
+    "applicant_phone": null,
+    "permit_type": "Commercial",
+    "site_address": "42 Green Valley Rd, New Delhi",
+    "site_lat": 28.613,
+    "site_lng": 77.206,
+    "documents": [
+      "site_plan.pdf",
+      "structural_cert.pdf",
+      "applicant_id.pdf"
+    ],
+    "missing_docs": [],
+    "detected_zone": "residential",
+    "requested_use": "commercial",
+    "zone_conflict": true,
+    "protected_area": false,
+    "gis_source": "GeoPermit Local Zoning GIS",
+    "gis_polygon_id": "zone/zone_1",
+    "ai_decision": "EscalateHuman",
+    "ai_confidence": 0.92,
+    "ai_reasoning": "ZONING CONFLICT: The applicant requested a 'Commercial' permit, but the GIS check indicates the site is in a 'residential' zone. Commercial or industrial activities in residential areas require planning variance review.",
+    "assigned_officer": "Officer Sarah Jenkins",
+    "officer_decision": null,
+    "officer_notes": "",
+    "audit_log": [
+      {
+        "timestamp": "2026-06-11T07:40:49.557Z",
+        "actor": "Intake Classifier Agent",
+        "action": "Intake Parsed",
+        "details": "Received permit application. Applicant: TechCorp Ltd, Type: Commercial. Checked uploaded documents: [site_plan.pdf, structural_cert.pdf, applicant_id.pdf]."
+      },
+      {
+        "timestamp": "2026-06-11T07:40:49.557Z",
+        "actor": "GIS Compliance Agent",
+        "action": "GIS Compliance Checked",
+        "details": "Geocoded site coordinates to (28.6130, 77.2060). Detected zone: 'residential'. Zone Conflict: true, Protected Area: false (via GeoPermit Local Zoning GIS)."
+      },
+      {
+        "timestamp": "2026-06-11T07:40:49.557Z",
+        "actor": "Case Resolution Agent",
+        "action": "Resolution Evaluated",
+        "details": "AI Decision: EscalateHuman (Confidence: 0.92). Reasoning: ZONING CONFLICT: The applicant requested a 'Commercial' permit, but the GIS check indicates the site is in a 'residential' zone. Commercial or industrial activities in residential areas require planning variance review."
+      },
+      {
+        "timestamp": "2026-06-11T07:40:49.557Z",
+        "actor": "Maestro Case Engine",
+        "action": "HITL Task Created",
+        "details": "Escalated to human review. Created task 'task-ca945f' for Officer Sarah Jenkins (SLA: 5 business days)."
+      }
+    ]
+  },
+  {
+    "case_id": "1215619d-09cb-4ed5-9906-0bebf67e1bb5",
+    "created_at": "2026-06-11T07:41:01.602Z",
+    "sla_deadline": "2026-06-25T07:41:01.602Z",
+    "status": "DocumentsRequested",
+    "applicant_name": "BuildCo Developers",
+    "applicant_email": "info@buildco.in",
+    "applicant_phone": null,
+    "permit_type": "Commercial",
+    "site_address": "10 CBD Plaza, New Delhi",
+    "site_lat": 28.615,
+    "site_lng": 77.225,
+    "documents": [
+      "structural_cert.pdf"
+    ],
+    "missing_docs": [
+      "site plan",
+      "applicant id"
+    ],
+    "detected_zone": "commercial",
+    "requested_use": "commercial",
+    "zone_conflict": false,
+    "protected_area": false,
+    "gis_source": "GeoPermit Local Zoning GIS",
+    "gis_polygon_id": "zone/zone_2",
+    "ai_decision": "RequestDocuments",
+    "ai_confidence": 0.9,
+    "ai_reasoning": "INCOMPLETE APPLICATION: Zoning is compliant (requested 'Commercial' in 'commercial' zone), but required documents are missing: site plan, applicant id.",
+    "assigned_officer": "System Automated",
+    "officer_decision": null,
+    "officer_notes": "",
+    "audit_log": [
+      {
+        "timestamp": "2026-06-11T07:41:01.602Z",
+        "actor": "Intake Classifier Agent",
+        "action": "Intake Parsed",
+        "details": "Received permit application. Applicant: BuildCo Developers, Type: Commercial. Checked uploaded documents: [structural_cert.pdf]."
+      },
+      {
+        "timestamp": "2026-06-11T07:41:01.602Z",
+        "actor": "Intake Classifier Agent",
+        "action": "Missing Documents Flagged",
+        "details": "Identified missing documents required for Commercial: site plan, applicant id."
+      },
+      {
+        "timestamp": "2026-06-11T07:41:01.602Z",
+        "actor": "GIS Compliance Agent",
+        "action": "GIS Compliance Checked",
+        "details": "Geocoded site coordinates to (28.6150, 77.2250). Detected zone: 'commercial'. Zone Conflict: false, Protected Area: false (via GeoPermit Local Zoning GIS)."
+      },
+      {
+        "timestamp": "2026-06-11T07:41:01.602Z",
+        "actor": "Case Resolution Agent",
+        "action": "Resolution Evaluated",
+        "details": "AI Decision: RequestDocuments (Confidence: 0.90). Reasoning: INCOMPLETE APPLICATION: Zoning is compliant (requested 'Commercial' in 'commercial' zone), but required documents are missing: site plan, applicant id."
+      },
+      {
+        "timestamp": "2026-06-11T07:41:01.602Z",
+        "actor": "RPA Notification Bot",
+        "action": "Missing Docs Request Sent",
+        "details": "Emailed applicant at info@buildco.in requesting: site plan, applicant id. Case status set to DocumentsRequested."
+      }
+    ]
+  },
+  {
+    "case_id": "d4422a68-9d40-47bf-9f15-0ebfa002c2fe",
+    "created_at": "2026-06-11T07:52:34.468Z",
+    "sla_deadline": "2026-06-25T07:52:34.468Z",
+    "status": "Closed",
+    "applicant_name": "Rahul Sharma",
+    "applicant_email": "rahul@example.com",
+    "applicant_phone": null,
+    "permit_type": "Residential",
+    "site_address": "14 Green Valley Rd, New Delhi",
+    "site_lat": 28.6115,
+    "site_lng": 77.205,
+    "documents": [
+      "site_plan.pdf",
+      "property_deed.pdf",
+      "applicant_id.pdf"
+    ],
+    "missing_docs": [],
+    "detected_zone": "residential",
+    "requested_use": "residential",
+    "zone_conflict": false,
+    "protected_area": false,
+    "gis_source": "GeoPermit Local Zoning GIS",
+    "gis_polygon_id": "local/zone/zone_delhi_residential_1",
+    "ai_decision": "AutoApprove",
+    "ai_confidence": 0.95,
+    "ai_reasoning": "COMPLIANT: Residential permit aligns with residential zoning and all documents are provided.",
+    "assigned_officer": "System Automated",
+    "officer_decision": "Approved",
+    "officer_notes": "AI auto-approved — all compliance checks passed.",
+    "audit_log": [
+      {
+        "timestamp": "2026-06-11T07:52:34.468Z",
+        "actor": "Intake Classifier Agent",
+        "action": "Intake Parsed",
+        "details": "Permit application received from Rahul Sharma. Type: Residential. Uploaded: [site_plan.pdf, property_deed.pdf, applicant_id.pdf]. All required documents present."
+      },
+      {
+        "timestamp": "2026-06-11T07:52:34.469Z",
+        "actor": "GIS Compliance Agent",
+        "action": "GIS Analysis Complete",
+        "details": "Coordinates: (28.61150, 77.20500). Detected zone: 'residential' via GeoPermit Local Zoning GIS. Zone Conflict: false. Protected Area: false. Polygon ID: local/zone/zone_delhi_residential_1."
+      },
+      {
+        "timestamp": "2026-06-11T07:52:34.566Z",
+        "actor": "Case Resolution Agent (GROQ llama3-8b-8192)",
+        "action": "AI Decision Generated",
+        "details": "Decision: AutoApprove | Confidence: 95% | Reasoning: COMPLIANT: Residential permit aligns with residential zoning and all documents are provided."
+      },
+      {
+        "timestamp": "2026-06-11T07:52:34.566Z",
+        "actor": "RPA Notification Bot",
+        "action": "Auto Approval Issued",
+        "details": "Permit auto-approved by AI. Compliance confirmed. Approval notification dispatched to rahul@example.com."
+      }
+    ]
+  },
+  {
+    "case_id": "12f14759-74a5-4b43-913a-be857668ed0d",
+    "created_at": "2026-06-11T07:52:56.172Z",
+    "sla_deadline": "2026-06-25T07:52:56.172Z",
+    "status": "HumanReview",
+    "applicant_name": "TechCorp Ltd",
+    "applicant_email": "contact@techcorp.com",
+    "applicant_phone": null,
+    "permit_type": "Commercial",
+    "site_address": "42 Green Valley Rd, New Delhi",
+    "site_lat": 28.613,
+    "site_lng": 77.206,
+    "documents": [
+      "site_plan.pdf",
+      "structural_cert.pdf",
+      "applicant_id.pdf"
+    ],
+    "missing_docs": [],
+    "detected_zone": "residential",
+    "requested_use": "commercial",
+    "zone_conflict": true,
+    "protected_area": false,
+    "gis_source": "GeoPermit Local Zoning GIS",
+    "gis_polygon_id": "local/zone/zone_delhi_residential_1",
+    "ai_decision": "EscalateHuman",
+    "ai_confidence": 0.92,
+    "ai_reasoning": "ZONING CONFLICT: 'Commercial' permit requested in 'residential' zone — planning variance needed.",
+    "assigned_officer": "Officer Sarah Jenkins",
+    "officer_decision": null,
+    "officer_notes": "",
+    "audit_log": [
+      {
+        "timestamp": "2026-06-11T07:52:56.172Z",
+        "actor": "Intake Classifier Agent",
+        "action": "Intake Parsed",
+        "details": "Permit application received from TechCorp Ltd. Type: Commercial. Uploaded: [site_plan.pdf, structural_cert.pdf, applicant_id.pdf]. All required documents present."
+      },
+      {
+        "timestamp": "2026-06-11T07:52:56.173Z",
+        "actor": "GIS Compliance Agent",
+        "action": "GIS Analysis Complete",
+        "details": "Coordinates: (28.61300, 77.20600). Detected zone: 'residential' via GeoPermit Local Zoning GIS. Zone Conflict: true. Protected Area: false. Polygon ID: local/zone/zone_delhi_residential_1."
+      },
+      {
+        "timestamp": "2026-06-11T07:52:56.235Z",
+        "actor": "Case Resolution Agent (GROQ llama3-8b-8192)",
+        "action": "AI Decision Generated",
+        "details": "Decision: EscalateHuman | Confidence: 92% | Reasoning: ZONING CONFLICT: 'Commercial' permit requested in 'residential' zone — planning variance needed."
+      },
+      {
+        "timestamp": "2026-06-11T07:52:56.235Z",
+        "actor": "UiPath Maestro Case Engine",
+        "action": "HITL Task Created",
+        "details": "Case escalated to human review. Action App task created for Officer Sarah Jenkins (SLA: 5 business days). Reason: ZONING CONFLICT: 'Commercial' permit requested in 'residential' zone — planning variance needed."
+      }
+    ]
+  },
+  {
+    "case_id": "62c29503-9671-413d-b9f2-1326fce64076",
+    "created_at": "2026-06-11T07:54:43.171Z",
+    "sla_deadline": "2026-06-25T07:54:43.171Z",
+    "status": "DocumentsRequested",
+    "applicant_name": "BuildCo Developers",
+    "applicant_email": "info@buildco.in",
+    "applicant_phone": null,
+    "permit_type": "Commercial",
+    "site_address": "10 CBD Plaza, New Delhi",
+    "site_lat": 28.615,
+    "site_lng": 77.225,
+    "documents": [
+      "structural_cert.pdf"
+    ],
+    "missing_docs": [
+      "site plan",
+      "applicant id"
+    ],
+    "detected_zone": "commercial",
+    "requested_use": "commercial",
+    "zone_conflict": false,
+    "protected_area": false,
+    "gis_source": "GeoPermit Local Zoning GIS",
+    "gis_polygon_id": "local/zone/zone_delhi_commercial_1",
+    "ai_decision": "RequestDocuments",
+    "ai_confidence": 0.9,
+    "ai_reasoning": "INCOMPLETE: Zoning is compliant but required documents are missing: site plan, applicant id.",
+    "assigned_officer": "System Automated",
+    "officer_decision": null,
+    "officer_notes": "",
+    "audit_log": [
+      {
+        "timestamp": "2026-06-11T07:54:43.171Z",
+        "actor": "Intake Classifier Agent",
+        "action": "Intake Parsed",
+        "details": "Permit application received from BuildCo Developers. Type: Commercial. Uploaded: [structural_cert.pdf]. Missing: site plan, applicant id."
+      },
+      {
+        "timestamp": "2026-06-11T07:54:43.171Z",
+        "actor": "Intake Classifier Agent",
+        "action": "Missing Documents Flagged",
+        "details": "Required documents absent for Commercial permit type: site plan, applicant id."
+      },
+      {
+        "timestamp": "2026-06-11T07:54:43.172Z",
+        "actor": "GIS Compliance Agent",
+        "action": "GIS Analysis Complete",
+        "details": "Coordinates: (28.61500, 77.22500). Detected zone: 'commercial' via GeoPermit Local Zoning GIS. Zone Conflict: false. Protected Area: false. Polygon ID: local/zone/zone_delhi_commercial_1."
+      },
+      {
+        "timestamp": "2026-06-11T07:54:43.240Z",
+        "actor": "Case Resolution Agent (GROQ llama3-8b-8192)",
+        "action": "AI Decision Generated",
+        "details": "Decision: RequestDocuments | Confidence: 90% | Reasoning: INCOMPLETE: Zoning is compliant but required documents are missing: site plan, applicant id."
+      },
+      {
+        "timestamp": "2026-06-11T07:54:43.240Z",
+        "actor": "RPA Notification Bot",
+        "action": "Document Request Dispatched",
+        "details": "Document request email sent to info@buildco.in. Required: site plan, applicant id. Case awaiting resubmission."
       }
     ]
   }

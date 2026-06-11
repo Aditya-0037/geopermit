@@ -123,62 +123,59 @@ export default function SubmitPermitPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center py-12 px-4 relative overflow-hidden">
-      {/* Dynamic background glow */}
-      <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-blue-900/20 blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-indigo-950/40 blur-[120px] pointer-events-none" />
+    <div className="min-h-screen bg-orange-50 text-stone-800 flex flex-col items-center py-12 px-4 relative">{/* Background removed */}
 
       <div className="w-full max-w-4xl z-10">
         {/* Back Link */}
-        <Link href="/" className="inline-flex items-center gap-2 text-slate-400 hover:text-slate-200 mb-8 transition-colors text-sm font-medium">
+        <Link href="/" className="inline-flex items-center gap-2 text-stone-600 hover:text-orange-600 mb-8 transition-colors text-sm font-medium">
           <ArrowLeft className="w-4 h-4" /> Back to Home
         </Link>
 
         {/* Title */}
         <div className="mb-10 text-center md:text-left">
-          <h1 className="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl font-black tracking-tight text-orange-600">
             Submit Permit Application
           </h1>
-          <p className="text-slate-400 mt-2 text-md">
+          <p className="text-stone-600 mt-2 text-md">
             Fill out the form below. AI agents will evaluate landuse compliance instantly.
           </p>
         </div>
 
         {/* Quick Fill Scenarios Card */}
-        <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-2xl p-6 mb-8 shadow-xl">
-          <h2 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4 flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-indigo-400" /> Demo Quick-Fill Scenarios
+        <div className="bg-white border-2 border-orange-200 rounded-2xl p-6 mb-8 shadow-sm">
+          <h2 className="text-sm font-bold text-stone-700 uppercase tracking-wider mb-4 flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-orange-600" /> Demo Quick-Fill Scenarios
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <button
               onClick={() => quickFill(1)}
               type="button"
-              className="p-4 bg-slate-950/40 hover:bg-slate-800/60 border border-slate-800 hover:border-slate-700 rounded-xl text-left transition-all group"
+              className="p-4 bg-green-50 hover:bg-green-100 border-2 border-green-200 hover:border-green-300 rounded-xl text-left transition-all group"
             >
-              <div className="font-semibold text-green-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+              <div className="font-semibold text-green-700 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
                 S1: Clean Approval →
               </div>
-              <p className="text-xs text-slate-400 mt-1">Residential permit in residential zone. Fully compliant.</p>
+              <p className="text-xs text-green-600 mt-1">Residential permit in residential zone. Fully compliant.</p>
             </button>
             <button
               onClick={() => quickFill(2)}
               type="button"
-              className="p-4 bg-slate-950/40 hover:bg-slate-800/60 border border-slate-800 hover:border-slate-700 rounded-xl text-left transition-all group"
+              className="p-4 bg-amber-50 hover:bg-amber-100 border-2 border-amber-200 hover:border-amber-300 rounded-xl text-left transition-all group"
             >
-              <div className="font-semibold text-amber-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+              <div className="font-semibold text-amber-700 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
                 S2: Zone Conflict (HITL) →
               </div>
-              <p className="text-xs text-slate-400 mt-1">Commercial building in residential zone. Escalates to officer.</p>
+              <p className="text-xs text-amber-600 mt-1">Commercial building in residential zone. Escalates to officer.</p>
             </button>
             <button
               onClick={() => quickFill(3)}
               type="button"
-              className="p-4 bg-slate-950/40 hover:bg-slate-800/60 border border-slate-800 hover:border-slate-700 rounded-xl text-left transition-all group"
+              className="p-4 bg-rose-50 hover:bg-rose-100 border-2 border-rose-200 hover:border-rose-300 rounded-xl text-left transition-all group"
             >
-              <div className="font-semibold text-red-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+              <div className="font-semibold text-rose-700 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
                 S3: Missing Documents →
               </div>
-              <p className="text-xs text-slate-400 mt-1">Commercial zone but missing site plans & approvals.</p>
+              <p className="text-xs text-rose-600 mt-1">Commercial zone but missing site plans & approvals.</p>
             </button>
           </div>
         </div>
@@ -186,52 +183,52 @@ export default function SubmitPermitPage() {
         {/* Main Form */}
         <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-8">
           {/* Left Side: Text Fields */}
-          <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 rounded-2xl p-8 shadow-2xl flex flex-col gap-6">
-            <h3 className="text-lg font-semibold text-slate-200 border-b border-slate-800 pb-3">Applicant & Project Details</h3>
+          <div className="bg-white border-2 border-orange-200 rounded-2xl p-8 shadow-sm flex flex-col gap-6">
+            <h3 className="text-lg font-semibold text-stone-800 border-b-2 border-orange-100 pb-3">Applicant & Project Details</h3>
             
             <div>
-              <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Full Name *</label>
+              <label className="block text-xs font-semibold text-stone-600 uppercase tracking-wider mb-2">Full Name *</label>
               <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. Rahul Sharma"
                 required
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 transition-colors text-sm"
+                className="w-full bg-white border-2 border-orange-200 rounded-xl px-4 py-3 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-orange-400 transition-colors text-sm"
               />
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Email Address *</label>
+                <label className="block text-xs font-semibold text-stone-600 uppercase tracking-wider mb-2">Email Address *</label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="e.g. rahul@example.com"
                   required
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 transition-colors text-sm"
+                  className="w-full bg-white border-2 border-orange-200 rounded-xl px-4 py-3 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-orange-400 transition-colors text-sm"
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Phone Number</label>
+                <label className="block text-xs font-semibold text-stone-600 uppercase tracking-wider mb-2">Phone Number</label>
                 <input
                   type="text"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="e.g. +91 98765 43210"
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 transition-colors text-sm"
+                  className="w-full bg-white border-2 border-orange-200 rounded-xl px-4 py-3 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-orange-400 transition-colors text-sm"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Permit Type *</label>
+                <label className="block text-xs font-semibold text-stone-600 uppercase tracking-wider mb-2">Permit Type *</label>
                 <select
                   value={type}
                   onChange={(e) => setType(e.target.value as PermitType)}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-indigo-500 transition-colors text-sm"
+                  className="w-full bg-white border-2 border-orange-200 rounded-xl px-4 py-3 text-stone-800 focus:outline-none focus:border-orange-400 transition-colors text-sm"
                 >
                   <option value="Residential">Residential</option>
                   <option value="Commercial">Commercial</option>
@@ -243,39 +240,39 @@ export default function SubmitPermitPage() {
                 </select>
               </div>
               <div>
-                <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Site Address *</label>
+                <label className="block text-xs font-semibold text-stone-600 uppercase tracking-wider mb-2">Site Address *</label>
                 <input
                   type="text"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
                   placeholder="e.g. 14 Green Valley Rd, New Delhi"
                   required
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 transition-colors text-sm"
+                  className="w-full bg-white border-2 border-orange-200 rounded-xl px-4 py-3 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-orange-400 transition-colors text-sm"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Detailed Work Description *</label>
+              <label className="block text-xs font-semibold text-stone-600 uppercase tracking-wider mb-2">Detailed Work Description *</label>
               <textarea
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Provide a detailed description of the proposed project..."
                 required
                 rows={4}
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 transition-colors text-sm resize-none"
+                className="w-full bg-white border-2 border-orange-200 rounded-xl px-4 py-3 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-orange-400 transition-colors text-sm resize-none"
               />
             </div>
           </div>
 
           {/* Right Side: Document Uploads & Actions */}
           <div className="flex flex-col gap-6">
-            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 rounded-2xl p-8 shadow-2xl flex-1 flex flex-col gap-6">
-              <h3 className="text-lg font-semibold text-slate-200 border-b border-slate-800 pb-3 flex items-center gap-2">
-                <Upload className="w-5 h-5 text-indigo-400" /> Document Intake Checklist
+            <div className="bg-white border-2 border-orange-200 rounded-2xl p-8 shadow-sm flex-1 flex flex-col gap-6">
+              <h3 className="text-lg font-semibold text-stone-800 border-b-2 border-orange-100 pb-3 flex items-center gap-2">
+                <Upload className="w-5 h-5 text-orange-600" /> Document Intake Checklist
               </h3>
               
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-stone-600">
                 Select documents to include with your application submission. Missing mandatory records will trigger document correction loops.
               </p>
 
@@ -287,21 +284,21 @@ export default function SubmitPermitPage() {
                       key={file.id}
                       type="button"
                       onClick={() => handleFileToggle(file.id)}
-                      className={`flex items-center justify-between p-4 border rounded-xl transition-all text-left ${
+                      className={`flex items-center justify-between p-4 border-2 rounded-xl transition-all text-left ${
                         isUploaded
-                          ? "bg-slate-950 border-indigo-500 text-indigo-200 shadow-lg shadow-indigo-950/20"
-                          : "bg-slate-950/30 border-slate-800 text-slate-400 hover:border-slate-700"
+                          ? "bg-orange-50 border-orange-400 text-orange-800 shadow-sm"
+                          : "bg-white border-orange-200 text-stone-600 hover:border-orange-300"
                       }`}
                     >
                       <div className="flex items-center gap-3">
-                        <FileText className={`w-5 h-5 ${isUploaded ? "text-indigo-400" : "text-slate-600"}`} />
+                        <FileText className={`w-5 h-5 ${isUploaded ? "text-orange-600" : "text-stone-400"}`} />
                         <div>
                           <div className="text-sm font-semibold">{file.label}</div>
-                          <div className="text-[10px] text-slate-500">{file.id}</div>
+                          <div className="text-[10px] text-stone-500">{file.id}</div>
                         </div>
                       </div>
-                      <div className={`w-5 h-5 rounded-full border flex items-center justify-center ${
-                        isUploaded ? "border-indigo-400 bg-indigo-500/20 text-indigo-400" : "border-slate-800 bg-slate-950"
+                      <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
+                        isUploaded ? "border-orange-600 bg-orange-100 text-orange-600" : "border-orange-200 bg-white"
                       }`}>
                         {isUploaded && <span className="text-[10px] font-bold">✓</span>}
                       </div>
@@ -315,7 +312,7 @@ export default function SubmitPermitPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 active:scale-[0.98] transition-all py-4 rounded-xl text-white font-bold tracking-wide shadow-lg shadow-indigo-900/30 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:pointer-events-none"
+              className="w-full bg-orange-600 hover:bg-orange-700 active:scale-[0.98] transition-all py-4 rounded-xl text-white font-bold tracking-wide shadow-sm flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:pointer-events-none"
             >
               {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : null}
               Submit Permit for Orchestration
@@ -326,106 +323,106 @@ export default function SubmitPermitPage() {
 
       {/* Simulated Agent Pipeline Overlay */}
       {showProcessing && (
-        <div className="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 flex items-center justify-center p-4">
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 max-w-xl w-full shadow-2xl relative overflow-hidden flex flex-col gap-6">
-            {/* Top border glow */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500" />
+        <div className="fixed inset-0 bg-stone-900/90 z-50 flex items-center justify-center p-4">
+          <div className="bg-white border-2 border-orange-200 rounded-3xl p-8 max-w-xl w-full shadow-xl relative overflow-hidden flex flex-col gap-6">
+            {/* Top border */}
+            <div className="absolute top-0 left-0 right-0 h-2 bg-orange-500" />
             
-            <h2 className="text-xl font-bold text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-xl font-bold text-center text-orange-600">
               UiPath Maestro Orchestrator Active
             </h2>
 
             <div className="flex flex-col gap-4">
               {/* Step 1: Intake */}
-              <div className={`flex items-start gap-4 p-3 rounded-xl transition-all ${
-                currentStep > 1 ? "bg-green-950/10 text-green-400 border border-green-950/20" : currentStep === 1 ? "bg-blue-950/10 text-blue-400 border border-blue-950/20" : "opacity-40"
+              <div className={`flex items-start gap-4 p-3 rounded-xl transition-all border-2 ${
+                currentStep > 1 ? "bg-green-50 text-green-700 border-green-200" : currentStep === 1 ? "bg-blue-50 text-blue-700 border-blue-200" : "opacity-40 border-stone-200"
               }`}>
                 {currentStep > 1 ? (
-                  <CheckCircle2 className="w-6 h-6 shrink-0 text-green-400 mt-0.5" />
+                  <CheckCircle2 className="w-6 h-6 shrink-0 text-green-600 mt-0.5" />
                 ) : currentStep === 1 ? (
                   <Loader2 className="w-6 h-6 shrink-0 animate-spin mt-0.5" />
                 ) : (
-                  <div className="w-6 h-6 rounded-full border border-slate-700 bg-slate-800 shrink-0 flex items-center justify-center text-xs">1</div>
+                  <div className="w-6 h-6 rounded-full border-2 border-stone-300 bg-white shrink-0 flex items-center justify-center text-xs text-stone-600">1</div>
                 )}
                 <div>
                   <h4 className="font-bold text-sm">Agent 1: Intake Classifier Agent</h4>
-                  <p className="text-xs text-slate-400 mt-1">Reading permit fields and checking mandatory attachments checklist.</p>
+                  <p className="text-xs text-stone-600 mt-1">Reading permit fields and checking mandatory attachments checklist.</p>
                 </div>
               </div>
 
               {/* Step 2: GIS Check */}
-              <div className={`flex items-start gap-4 p-3 rounded-xl transition-all ${
-                currentStep > 2 ? "bg-green-950/10 text-green-400 border border-green-950/20" : currentStep === 2 ? "bg-blue-950/10 text-blue-400 border border-blue-950/20" : "opacity-40"
+              <div className={`flex items-start gap-4 p-3 rounded-xl transition-all border-2 ${
+                currentStep > 2 ? "bg-green-50 text-green-700 border-green-200" : currentStep === 2 ? "bg-blue-50 text-blue-700 border-blue-200" : "opacity-40 border-stone-200"
               }`}>
                 {currentStep > 2 ? (
-                  <CheckCircle2 className="w-6 h-6 shrink-0 text-green-400 mt-0.5" />
+                  <CheckCircle2 className="w-6 h-6 shrink-0 text-green-600 mt-0.5" />
                 ) : currentStep === 2 ? (
                   <Loader2 className="w-6 h-6 shrink-0 animate-spin mt-0.5" />
                 ) : (
-                  <div className="w-6 h-6 rounded-full border border-slate-700 bg-slate-800 shrink-0 flex items-center justify-center text-xs">2</div>
+                  <div className="w-6 h-6 rounded-full border-2 border-stone-300 bg-white shrink-0 flex items-center justify-center text-xs text-stone-600">2</div>
                 )}
                 <div>
                   <h4 className="font-bold text-sm">Agent 2: GIS Compliance Agent</h4>
-                  <p className="text-xs text-slate-400 mt-1">Geocoding site address, mapping coordinates, and querying landuse zoning tag via Overpass API.</p>
+                  <p className="text-xs text-stone-600 mt-1">Geocoding site address, mapping coordinates, and querying landuse zoning tag via Overpass API.</p>
                 </div>
               </div>
 
               {/* Step 3: Resolution Advisor */}
-              <div className={`flex items-start gap-4 p-3 rounded-xl transition-all ${
-                currentStep > 3 ? "bg-green-950/10 text-green-400 border border-green-950/20" : currentStep === 3 ? "bg-blue-950/10 text-blue-400 border border-blue-950/20" : "opacity-40"
+              <div className={`flex items-start gap-4 p-3 rounded-xl transition-all border-2 ${
+                currentStep > 3 ? "bg-green-50 text-green-700 border-green-200" : currentStep === 3 ? "bg-blue-50 text-blue-700 border-blue-200" : "opacity-40 border-stone-200"
               }`}>
                 {currentStep > 3 ? (
-                  <CheckCircle2 className="w-6 h-6 shrink-0 text-green-400 mt-0.5" />
+                  <CheckCircle2 className="w-6 h-6 shrink-0 text-green-600 mt-0.5" />
                 ) : currentStep === 3 ? (
                   <Loader2 className="w-6 h-6 shrink-0 animate-spin mt-0.5" />
                 ) : (
-                  <div className="w-6 h-6 rounded-full border border-slate-700 bg-slate-800 shrink-0 flex items-center justify-center text-xs">3</div>
+                  <div className="w-6 h-6 rounded-full border-2 border-stone-300 bg-white shrink-0 flex items-center justify-center text-xs text-stone-600">3</div>
                 )}
                 <div>
                   <h4 className="font-bold text-sm">Agent 3: Case Resolution Agent</h4>
-                  <p className="text-xs text-slate-400 mt-1">Evaluating compliance matrices and compiling routing recommendations.</p>
+                  <p className="text-xs text-stone-600 mt-1">Evaluating compliance matrices and compiling routing recommendations.</p>
                 </div>
               </div>
 
               {/* Step 4: Finished/Decision */}
-              <div className={`flex items-start gap-4 p-3 rounded-xl transition-all ${
-                currentStep >= 5 ? "bg-green-950/10 text-green-400 border border-green-950/20" : currentStep === 4 ? "bg-blue-950/10 text-blue-400 border border-blue-950/20" : "opacity-40"
+              <div className={`flex items-start gap-4 p-3 rounded-xl transition-all border-2 ${
+                currentStep >= 5 ? "bg-green-50 text-green-700 border-green-200" : currentStep === 4 ? "bg-blue-50 text-blue-700 border-blue-200" : "opacity-40 border-stone-200"
               }`}>
                 {currentStep >= 5 ? (
-                  <CheckCircle2 className="w-6 h-6 shrink-0 text-green-400 mt-0.5" />
+                  <CheckCircle2 className="w-6 h-6 shrink-0 text-green-600 mt-0.5" />
                 ) : currentStep === 4 ? (
                   <Loader2 className="w-6 h-6 shrink-0 animate-spin mt-0.5" />
                 ) : (
-                  <div className="w-6 h-6 rounded-full border border-slate-700 bg-slate-800 shrink-0 flex items-center justify-center text-xs">4</div>
+                  <div className="w-6 h-6 rounded-full border-2 border-stone-300 bg-white shrink-0 flex items-center justify-center text-xs text-stone-600">4</div>
                 )}
                 <div>
                   <h4 className="font-bold text-sm">Agent 4: RPA Notification / Human Center</h4>
-                  <p className="text-xs text-slate-400 mt-1">Triggering notifications and dispatching exception cases to human-in-the-loop queue.</p>
+                  <p className="text-xs text-stone-600 mt-1">Triggering notifications and dispatching exception cases to human-in-the-loop queue.</p>
                 </div>
               </div>
             </div>
 
             {/* Results Display */}
             {currentStep === 5 && aiResult && (
-              <div className="bg-slate-950/80 border border-slate-800 rounded-2xl p-4 animate-fade-in flex flex-col gap-3 mt-2">
-                <div className="flex items-center justify-between border-b border-slate-800 pb-2">
-                  <span className="text-xs text-slate-500 font-semibold uppercase tracking-wider">Evaluation Result</span>
-                  <span className={`text-xs px-2.5 py-1 rounded-full font-bold uppercase ${
+              <div className="bg-orange-50 border-2 border-orange-200 rounded-2xl p-4 animate-fade-in flex flex-col gap-3 mt-2">
+                <div className="flex items-center justify-between border-b-2 border-orange-100 pb-2">
+                  <span className="text-xs text-stone-600 font-semibold uppercase tracking-wider">Evaluation Result</span>
+                  <span className={`text-xs px-2.5 py-1 rounded-full font-bold uppercase border-2 ${
                     aiResult.ai_decision === "AutoApprove" 
-                      ? "bg-green-950/40 text-green-400 border border-green-900" 
+                      ? "bg-green-50 text-green-700 border-green-200" 
                       : aiResult.ai_decision === "RequestDocuments" 
-                      ? "bg-red-950/40 text-red-400 border border-red-900" 
-                      : "bg-amber-950/40 text-amber-400 border border-amber-900"
+                      ? "bg-rose-50 text-rose-700 border-rose-200" 
+                      : "bg-amber-50 text-amber-700 border-amber-200"
                   }`}>
                     {aiResult.ai_decision}
                   </span>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                <p className="text-xs text-stone-700 leading-relaxed font-medium">
                   {aiResult.ai_reasoning}
                 </p>
                 
                 {aiResult.missing_docs && aiResult.missing_docs.length > 0 && (
-                  <div className="text-xs text-red-400 flex items-start gap-1 bg-red-950/10 p-2 rounded-lg border border-red-950/20">
+                  <div className="text-xs text-rose-700 flex items-start gap-1 bg-rose-50 p-2 rounded-lg border-2 border-rose-200">
                     <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5" />
                     <div>
                       <span className="font-semibold">Missing Docs: </span>
@@ -437,13 +434,13 @@ export default function SubmitPermitPage() {
                 <div className="grid grid-cols-2 gap-3 mt-2">
                   <Link
                     href={`/track?id=${createdCaseId}`}
-                    className="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 rounded-xl text-center text-xs font-semibold"
+                    className="py-2.5 bg-white hover:bg-orange-50 border-2 border-orange-300 text-orange-700 rounded-xl text-center text-xs font-semibold"
                   >
                     Track Status (Citizen)
                   </Link>
                   <Link
                     href={`/cases/${createdCaseId}`}
-                    className="py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-center text-xs font-semibold shadow-lg shadow-indigo-900/20"
+                    className="py-2.5 bg-orange-600 hover:bg-orange-700 text-white rounded-xl text-center text-xs font-semibold shadow-sm"
                   >
                     Review Case (Officer)
                   </Link>

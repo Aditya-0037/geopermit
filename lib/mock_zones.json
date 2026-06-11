@@ -1,46 +1,167 @@
 [
   {
-    "id": "zone_1",
+    "id": "zone_delhi_residential_1",
     "name": "Green Valley Residential Area",
     "landuse": "residential",
     "coordinates": [
-      {"lat": 28.61, "lng": 77.20},
-      {"lat": 28.61, "lng": 77.21},
-      {"lat": 28.62, "lng": 77.21},
-      {"lat": 28.62, "lng": 77.20}
+      {"lat": 28.605, "lng": 77.195},
+      {"lat": 28.605, "lng": 77.215},
+      {"lat": 28.625, "lng": 77.215},
+      {"lat": 28.625, "lng": 77.195}
     ]
   },
   {
-    "id": "zone_2",
-    "name": "Central Business District",
+    "id": "zone_delhi_commercial_1",
+    "name": "Central Business District — CBD Plaza",
     "landuse": "commercial",
     "coordinates": [
-      {"lat": 28.61, "lng": 77.22},
-      {"lat": 28.61, "lng": 77.23},
-      {"lat": 28.62, "lng": 77.23},
-      {"lat": 28.62, "lng": 77.22}
+      {"lat": 28.609, "lng": 77.218},
+      {"lat": 28.609, "lng": 77.234},
+      {"lat": 28.622, "lng": 77.234},
+      {"lat": 28.622, "lng": 77.218}
     ]
   },
   {
-    "id": "zone_3",
-    "name": "Industrial Park",
+    "id": "zone_delhi_industrial_1",
+    "name": "Okhla Industrial Estate Phase-1",
     "landuse": "industrial",
     "coordinates": [
-      {"lat": 28.61, "lng": 77.24},
-      {"lat": 28.61, "lng": 77.25},
-      {"lat": 28.62, "lng": 77.25},
-      {"lat": 28.62, "lng": 77.24}
+      {"lat": 28.527, "lng": 77.274},
+      {"lat": 28.527, "lng": 77.292},
+      {"lat": 28.543, "lng": 77.292},
+      {"lat": 28.543, "lng": 77.274}
     ]
   },
   {
-    "id": "zone_4",
-    "name": "Protected Wetland conservation area",
+    "id": "zone_delhi_nature_1",
+    "name": "Yamuna Floodplain Protected Wetland",
     "landuse": "nature_reserve",
     "coordinates": [
-      {"lat": 28.61, "lng": 77.26},
-      {"lat": 28.61, "lng": 77.27},
-      {"lat": 28.62, "lng": 77.27},
-      {"lat": 28.62, "lng": 77.26}
+      {"lat": 28.605, "lng": 77.254},
+      {"lat": 28.605, "lng": 77.275},
+      {"lat": 28.622, "lng": 77.275},
+      {"lat": 28.622, "lng": 77.254}
+    ]
+  },
+  {
+    "id": "zone_delhi_park_1",
+    "name": "Sanjay Gandhi Memorial Park",
+    "landuse": "park",
+    "coordinates": [
+      {"lat": 28.640, "lng": 77.195},
+      {"lat": 28.640, "lng": 77.216},
+      {"lat": 28.660, "lng": 77.216},
+      {"lat": 28.660, "lng": 77.195}
+    ]
+  },
+  {
+    "id": "zone_delhi_mixed_1",
+    "name": "Saket Mixed-Use Development Zone",
+    "landuse": "mixed_use",
+    "coordinates": [
+      {"lat": 28.523, "lng": 77.208},
+      {"lat": 28.523, "lng": 77.228},
+      {"lat": 28.540, "lng": 77.228},
+      {"lat": 28.540, "lng": 77.208}
+    ]
+  },
+  {
+    "id": "zone_delhi_residential_connaught",
+    "name": "Connaught Place Commercial Core",
+    "landuse": "commercial",
+    "coordinates": [
+      {"lat": 28.625, "lng": 77.208},
+      {"lat": 28.625, "lng": 77.226},
+      {"lat": 28.638, "lng": 77.226},
+      {"lat": 28.638, "lng": 77.208}
+    ]
+  },
+  {
+    "id": "zone_mumbai_bkc_1",
+    "name": "Bandra Kurla Complex — Financial Hub",
+    "landuse": "commercial",
+    "coordinates": [
+      {"lat": 19.057, "lng": 72.857},
+      {"lat": 19.057, "lng": 72.878},
+      {"lat": 19.073, "lng": 72.878},
+      {"lat": 19.073, "lng": 72.857}
+    ]
+  },
+  {
+    "id": "zone_mumbai_residential_1",
+    "name": "Andheri East Residential Zone",
+    "landuse": "residential",
+    "coordinates": [
+      {"lat": 19.108, "lng": 72.853},
+      {"lat": 19.108, "lng": 72.872},
+      {"lat": 19.125, "lng": 72.872},
+      {"lat": 19.125, "lng": 72.853}
+    ]
+  },
+  {
+    "id": "zone_mumbai_industrial_1",
+    "name": "MIDC Andheri Industrial Estate",
+    "landuse": "industrial",
+    "coordinates": [
+      {"lat": 19.112, "lng": 72.872},
+      {"lat": 19.112, "lng": 72.888},
+      {"lat": 19.128, "lng": 72.888},
+      {"lat": 19.128, "lng": 72.872}
+    ]
+  },
+  {
+    "id": "zone_bangalore_residential_1",
+    "name": "Rajaji Nagar Residential Area",
+    "landuse": "residential",
+    "coordinates": [
+      {"lat": 12.985, "lng": 77.545},
+      {"lat": 12.985, "lng": 77.563},
+      {"lat": 12.998, "lng": 77.563},
+      {"lat": 12.998, "lng": 77.545}
+    ]
+  },
+  {
+    "id": "zone_bangalore_tech_1",
+    "name": "Electronic City Phase 1 — IT Park",
+    "landuse": "industrial",
+    "coordinates": [
+      {"lat": 12.838, "lng": 77.660},
+      {"lat": 12.838, "lng": 77.680},
+      {"lat": 12.855, "lng": 77.680},
+      {"lat": 12.855, "lng": 77.660}
+    ]
+  },
+  {
+    "id": "zone_hyderabad_hitech_1",
+    "name": "HITEC City Commercial Zone",
+    "landuse": "commercial",
+    "coordinates": [
+      {"lat": 17.443, "lng": 78.376},
+      {"lat": 17.443, "lng": 78.397},
+      {"lat": 17.460, "lng": 78.397},
+      {"lat": 17.460, "lng": 78.376}
+    ]
+  },
+  {
+    "id": "zone_chennai_residential_1",
+    "name": "Anna Nagar Residential Zone",
+    "landuse": "residential",
+    "coordinates": [
+      {"lat": 13.083, "lng": 80.207},
+      {"lat": 13.083, "lng": 80.227},
+      {"lat": 13.100, "lng": 80.227},
+      {"lat": 13.100, "lng": 80.207}
+    ]
+  },
+  {
+    "id": "zone_pune_industrial_1",
+    "name": "Pimpri Chinchwad MIDC Industrial Zone",
+    "landuse": "industrial",
+    "coordinates": [
+      {"lat": 18.615, "lng": 73.793},
+      {"lat": 18.615, "lng": 73.818},
+      {"lat": 18.635, "lng": 73.818},
+      {"lat": 18.635, "lng": 73.793}
     ]
   }
 ]
